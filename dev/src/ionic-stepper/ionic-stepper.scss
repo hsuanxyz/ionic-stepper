@@ -1,0 +1,33 @@
+@import "./variables";
+
+ionic-stepper {
+
+  .#{$stepper-prefix}-horizontal-container,
+  .#{$stepper-prefix}-vertical-container {
+    display: block;
+  }
+
+  .#{$stepper-prefix}-vertical-content-container {
+    margin-left: 36px;
+    position: relative;
+  }
+
+  .#{$stepper-prefix}-vertical-content {
+    overflow: hidden;
+  }
+
+  .ionic-vertical-content {
+    padding: 0 24px 24px 24px;
+  }
+
+  .#{$stepper-prefix}-vertical-line::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    bottom: -16px;
+    left: 0;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: $step-line-color;
+  }
+}
