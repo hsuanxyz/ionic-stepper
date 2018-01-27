@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   template: `
 <div class="ionic-step-header-icon" [class.ionic-step-header-icon-active]="active">
     <span class="ionic-step-header-icon-number" *ngIf="icon === 'number'; else ionIcon">{{index + 1}}</span>
-    <ng-template #ionIcon><ion-icon name="heart"></ion-icon></ng-template>
+    <ng-template #ionIcon><ion-icon [name]="icon"></ion-icon></ng-template>
 </div>
 <div class="ionic-step-header-text-container" [class.mt]="description">
   <div class="ionic-step-header-label" [class.ionic-step-header-label-active]="active">{{label}}</div>

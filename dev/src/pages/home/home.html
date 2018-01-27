@@ -10,11 +10,13 @@
   <input type="number" [(ngModel)]="index">
   <ionic-stepper [selectedIndex]="index">
     <ionic-step label="Step1"
+                icon="logo-github"
                 description="Step1 description">
       <div>Step1 Content</div>
       <button ion-button small ionicStepperNext>Next</button>
     </ionic-step>
     <ionic-step label="Step2"
+                icon="logo-javascript"
                 description="Step1 description">
       <div>Step2 Content</div>
       <div>Step2 Content</div>
@@ -23,6 +25,7 @@
       <button ion-button small ionicStepperNext>Next</button>
     </ionic-step>
     <ionic-step label="Step3"
+                icon="logo-sass"
                 description="Step3 description">
       <h2>Step3 Content</h2>
       <p>Step3 Content</p>

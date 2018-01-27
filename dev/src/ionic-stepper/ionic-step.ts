@@ -13,6 +13,8 @@ export class IonicStepComponent implements OnChanges {
   @Input() disabled: boolean;
   @Input() label: string;
   @Input() description: string;
+  @Input() icon: string = 'number';
+
   @ViewChild(TemplateRef) content: TemplateRef<any>;
 
   constructor(@Inject(forwardRef(() => IonicStepperComponent)) private _stepper: IonicStepperComponent) {

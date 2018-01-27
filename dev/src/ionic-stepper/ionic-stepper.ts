@@ -11,13 +11,13 @@ type StepContentPositionState = ('next' | 'previous' | 'current');
 @Component({
   selector: 'ionic-stepper',
   template: `
-<ng-container ></ng-container>
 <div *ngIf="mode === 'horizontal'" class="ionic-stepper-horizontal-container">
 
 </div>
 <div *ngIf="mode === 'vertical'" class="ionic-stepper-vertical-container">
     <ng-container *ngFor="let step of _steps; let i = index; let isLast = last">
         <ionic-step-header [index]="i"
+                           [icon]="step.icon"
                            [label]="step.label"
                            [active]="i === selectedIndex"
                            [description]="step.description">
@@ -44,7 +44,6 @@ export class IonicStepperComponent implements OnInit, AfterContentInit {
   @ContentChildren(IonicStepComponent) _steps: QueryList<IonicStepComponent>;
   @Input() mode: ('horizontal' | 'vertical') = 'vertical';
   @Input() selectedIndex: number = 0;
-  stepsLength: number;
   disabled: boolean;
 
   constructor(private _hostRef: ElementRef, private render: Renderer2) {
