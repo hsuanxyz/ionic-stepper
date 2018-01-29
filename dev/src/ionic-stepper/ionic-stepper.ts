@@ -1,5 +1,5 @@
 import {
-  AfterContentInit,
+  AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef,
   Component, ContentChildren, ElementRef, Input, OnInit, QueryList,
   Renderer2
 } from '@angular/core';
@@ -19,6 +19,7 @@ type StepContentPositionState = ('next' | 'previous' | 'current');
         <ionic-step-header [index]="i"
                            [icon]="step.icon"
                            [label]="step.label"
+                           [status]="step.status"
                            [active]="i === selectedIndex"
                            [description]="step.description">
         </ionic-step-header>
@@ -34,6 +35,7 @@ type StepContentPositionState = ('next' | 'previous' | 'current');
     </ng-container>
 </div>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     'class': 'ionic-stepper'
   },
@@ -46,7 +48,7 @@ export class IonicStepperComponent implements OnInit, AfterContentInit {
   @Input() selectedIndex: number = 0;
   disabled: boolean;
 
-  constructor(private _hostRef: ElementRef, private render: Renderer2) {
+  constructor(private _hostRef: ElementRef, private render: Renderer2, private _changeDetectorRef: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
@@ -59,10 +61,12 @@ export class IonicStepperComponent implements OnInit, AfterContentInit {
 
   nextStep(): void {
     this.selectedIndex = Math.min(this.selectedIndex + 1, this._steps.length - 1);
+    this._changeDetectorRef.markForCheck();
   }
 
   previousStep(): void {
     this.selectedIndex = Math.max(this.selectedIndex - 1, 0);
+    this._changeDetectorRef.markForCheck();
   }
 
   setStep(index: number): void {

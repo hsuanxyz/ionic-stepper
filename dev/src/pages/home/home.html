@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-  <input type="number" [(ngModel)]="index">
+  {{index}}
   <ionic-stepper [selectedIndex]="index">
     <ionic-step label="Step1"
                 icon="logo-github"
@@ -17,6 +17,7 @@
     </ionic-step>
     <ionic-step label="Step2"
                 icon="logo-javascript"
+                status="error"
                 description="Step1 description">
       <div>Step2 Content</div>
       <div>Step2 Content</div>
