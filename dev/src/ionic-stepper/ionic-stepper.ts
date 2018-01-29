@@ -1,6 +1,6 @@
 import {
   AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef,
-  Component, ContentChildren, ElementRef, Input, OnInit, QueryList,
+  Component, ContentChildren, ElementRef, EventEmitter, Input, OnInit, Output, QueryList,
   Renderer2
 } from '@angular/core';
 import { IonicStepComponent } from "./ionic-step";
@@ -42,11 +42,12 @@ type StepContentPositionState = ('next' | 'previous' | 'current');
   animations: [IonicStepperAnimations.verticalStepTransition],
 })
 export class IonicStepperComponent implements OnInit, AfterContentInit {
+  disabled: boolean;
 
   @ContentChildren(IonicStepComponent) _steps: QueryList<IonicStepComponent>;
   @Input() mode: ('horizontal' | 'vertical') = 'vertical';
   @Input() selectedIndex: number = 0;
-  disabled: boolean;
+  @Output() selectChange: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(private _hostRef: ElementRef, private render: Renderer2, private _changeDetectorRef: ChangeDetectorRef) {
   }
@@ -61,11 +62,13 @@ export class IonicStepperComponent implements OnInit, AfterContentInit {
 
   nextStep(): void {
     this.selectedIndex = Math.min(this.selectedIndex + 1, this._steps.length - 1);
+    this.selectChange.emit((this.selectedIndex));
     this._changeDetectorRef.markForCheck();
   }
 
   previousStep(): void {
     this.selectedIndex = Math.max(this.selectedIndex - 1, 0);
+    this.selectChange.emit((this.selectedIndex));
     this._changeDetectorRef.markForCheck();
   }
 

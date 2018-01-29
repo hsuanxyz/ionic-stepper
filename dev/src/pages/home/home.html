@@ -8,7 +8,7 @@
 
 <ion-content>
   {{index}}
-  <ionic-stepper [selectedIndex]="index">
+  <ionic-stepper [selectedIndex]="index" (selectChange)="selectChange($event)">
     <ionic-step label="Step1"
                 icon="logo-github"
                 description="Step1 description">
