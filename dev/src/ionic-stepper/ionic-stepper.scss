@@ -7,6 +7,12 @@ ionic-stepper {
     display: block;
   }
 
+  .#{$stepper-prefix}-horizontal-header-container {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+  }
+
   .#{$stepper-prefix}-vertical-content-container {
     margin-left: 36px;
     position: relative;
@@ -29,5 +35,15 @@ ionic-stepper {
     border-left-width: 1px;
     border-left-style: solid;
     border-left-color: $step-line-color;
+  }
+
+  .#{$stepper-prefix}-horizontal-line{
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: $step-line-color;
+    flex: auto;
+    height: 0;
+    margin: 0 -16px;
+    min-width: 10px;
   }
 }

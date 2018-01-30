@@ -13,7 +13,7 @@ ionic-step-header {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 12px;
+    margin-right: 8px;
     flex: none;
     width: $step-circle-w;
     height: $step-circle-h;
@@ -52,7 +52,9 @@ ionic-step-header {
     vertical-align: middle;
     width: 100%;
     transition: color 225ms cubic-bezier(0.4, 0.0, 0.2, 1);
-
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     &-error {
       color: rgba($step-error-color, 0.38)
     }
@@ -71,7 +73,10 @@ ionic-step-header {
     min-width: 50px;
     vertical-align: middle;
     width: 100%;
-
+    font-size: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     &-error {
       color: rgba($step-error-color, 0.38)
     }

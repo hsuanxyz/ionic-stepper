@@ -14,7 +14,9 @@ import { IonicStepStatus } from "./ionic-step";
   <div class="ionic-step-header-label"
        [class.ionic-step-header-label-error]="isError"
        [class.ionic-step-header-label-active]="active">{{label}}</div>
-  <div class="ionic-step-header-description" [class.ionic-step-header-description-error]="isError" *ngIf="description">{{description}}</div>
+  <div class="ionic-step-header-description" [class.ionic-step-header-description-error]="isError" *ngIf="description">
+    <span>{{description}}</span>
+  </div>
 </div>
   `,
   host: {

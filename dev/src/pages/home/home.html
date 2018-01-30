@@ -7,29 +7,31 @@
 </ion-header>
 
 <ion-content>
-  {{index}}
-  <ionic-stepper [selectedIndex]="index" (selectChange)="selectChange($event)">
+  <ionic-stepper mode="horizontal" (selectChange)="selectChange($event)">
     <ionic-step label="Step1"
-                icon="logo-github"
                 description="Step1 description">
-      <div>Step1 Content</div>
+      <h2>Step1 Content</h2>
+      <p>Step1 Content</p>
       <button ion-button small ionicStepperNext>Next</button>
     </ionic-step>
     <ionic-step label="Step2"
-                icon="logo-javascript"
-                status="error"
                 description="Step1 description">
-      <div>Step2 Content</div>
-      <div>Step2 Content</div>
-      <div>Step2 Content</div>
+      <h2>Step2 Content</h2>
+      <p>Step2 Content</p>
       <button ion-button color="light" small ionicStepperPrevious>Previous</button>
       <button ion-button small ionicStepperNext>Next</button>
     </ionic-step>
     <ionic-step label="Step3"
-                icon="logo-sass"
                 description="Step3 description">
       <h2>Step3 Content</h2>
       <p>Step3 Content</p>
+      <button ion-button color="light" small ionicStepperPrevious>Previous</button>
+      <button ion-button small ionicStepperNext>Next</button>
+    </ionic-step>
+    <ionic-step label="Step4"
+                description="Step4 description">
+      <h2>Step4 Content</h2>
+      <p>Step4 Content</p>
       <button ion-button color="light" small ionicStepperPrevious>Previous</button>
     </ionic-step>
   </ionic-stepper>
