@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { IonicStepStatus } from "./ionic-step";
 
 @Component({
-  selector: 'ionic-step-header',
+  selector: 'ion-step-header',
   template: `
 <div class="ionic-step-header-icon"
      [class.ionic-step-header-icon-error]="isError"

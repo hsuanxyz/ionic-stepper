@@ -9,17 +9,17 @@ import { IonicStepperAnimations } from "./ionic-stepper-animations";
 type StepContentPositionState = ('next' | 'previous' | 'current');
 
 @Component({
-  selector: 'ionic-stepper',
+  selector: 'ion-stepper',
   template: `
 <div *ngIf="mode === 'horizontal'" class="ionic-stepper-horizontal-container">
      <div class="ionic-stepper-horizontal-header-container">
        <ng-container *ngFor="let step of _steps; let i = index; let isLast = last">
-          <ionic-step-header [index]="i"
+          <ion-step-header [index]="i"
                              [icon]="step.icon"
                              [label]="step.label"
                              [status]="step.status"
                              [active]="i <= selectedIndex">
-          </ionic-step-header>
+          </ion-step-header>
           <div *ngIf="!isLast" class="ionic-stepper-horizontal-line"></div>
       </ng-container>      
     </div>
@@ -38,13 +38,13 @@ type StepContentPositionState = ('next' | 'previous' | 'current');
 
 <div *ngIf="mode === 'vertical'" class="ionic-stepper-vertical-container">
     <ng-container *ngFor="let step of _steps; let i = index; let isLast = last">
-        <ionic-step-header [index]="i"
+        <ion-step-header [index]="i"
                            [icon]="step.icon"
                            [label]="step.label"
                            [status]="step.status"
                            [active]="i <= selectedIndex"
                            [description]="step.description">
-        </ionic-step-header>
+        </ion-step-header>
         <div class="ionic-stepper-vertical-content-container"
              [class.ionic-stepper-vertical-line]="!isLast">
             <div class="ionic-stepper-vertical-content"

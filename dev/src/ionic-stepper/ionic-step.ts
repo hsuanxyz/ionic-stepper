@@ -4,7 +4,7 @@ import { IonicStepperComponent } from "./ionic-stepper";
 export type IonicStepStatus = ('' | 'error')
 
 @Component({
-  selector: 'ionic-step',
+  selector: 'ion-step',
   template: `
   <ng-template><ng-content></ng-content></ng-template>
   `

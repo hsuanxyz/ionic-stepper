@@ -7,32 +7,35 @@
 </ion-header>
 
 <ion-content>
-  <ionic-stepper mode="horizontal" (selectChange)="selectChange($event)">
-    <ionic-step label="Step1"
+  <button ion-button (click)="mode = 'horizontal'">horizontal</button>
+  <button ion-button (click)="mode = 'vertical'">vertical</button>
+
+  <ion-stepper [mode]="mode" (selectChange)="selectChange($event)">
+    <ion-step label="Step1"
                 description="Step1 description">
       <h2>Step1 Content</h2>
       <p>Step1 Content</p>
       <button ion-button small ionicStepperNext>Next</button>
-    </ionic-step>
-    <ionic-step label="Step2"
+    </ion-step>
+    <ion-step label="Step2"
                 description="Step1 description">
       <h2>Step2 Content</h2>
       <p>Step2 Content</p>
       <button ion-button color="light" small ionicStepperPrevious>Previous</button>
       <button ion-button small ionicStepperNext>Next</button>
-    </ionic-step>
-    <ionic-step label="Step3"
+    </ion-step>
+    <ion-step label="Step3"
                 description="Step3 description">
       <h2>Step3 Content</h2>
       <p>Step3 Content</p>
       <button ion-button color="light" small ionicStepperPrevious>Previous</button>
       <button ion-button small ionicStepperNext>Next</button>
-    </ionic-step>
-    <ionic-step label="Step4"
+    </ion-step>
+    <ion-step label="Step4"
                 description="Step4 description">
       <h2>Step4 Content</h2>
       <p>Step4 Content</p>
       <button ion-button color="light" small ionicStepperPrevious>Previous</button>
-    </ionic-step>
-  </ionic-stepper>
+    </ion-step>
+  </ion-stepper>
 </ion-content>

@@ -6,13 +6,12 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  index:number = 2;
+  mode:string = 'vertical';
   constructor(public navCtrl: NavController) {
 
   }
 
   selectChange(e) {
-    console.log(this.index);
     console.log(e);
   }
 }
