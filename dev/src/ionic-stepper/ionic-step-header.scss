@@ -39,6 +39,11 @@ ion-step-header {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    overflow: hidden;
+    outline: 0;
+    cursor: pointer;
+    position: relative;
+    box-sizing: content-box;
     &.mt {
       margin-top: 14px;
     }
