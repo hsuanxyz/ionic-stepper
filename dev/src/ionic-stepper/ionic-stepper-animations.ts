@@ -9,11 +9,11 @@
 // https://github.com/angular/material2/blob/master/src/lib/stepper/stepper-animations.ts
 
 import {
-  animate,
   state,
   style,
   transition,
   trigger,
+  animate,
   AnimationTriggerMetadata,
 } from '@angular/animations';
 

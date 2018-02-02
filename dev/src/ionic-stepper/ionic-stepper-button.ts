@@ -1,5 +1,5 @@
 import { Directive} from '@angular/core';
-import { IonicStepperComponent } from "./ionic-stepper";
+import { IonicStepperComponent } from './ionic-stepper';
 
 /** Button that moves to the next step in a stepper workflow. */
 @Directive({

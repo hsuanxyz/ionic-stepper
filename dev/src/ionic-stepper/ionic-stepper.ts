@@ -11,8 +11,8 @@ import {
   QueryList,
   Renderer2
 } from '@angular/core';
-import { IonicStepComponent } from "./ionic-step";
-import { IonicStepperAnimations } from "./ionic-stepper-animations";
+import { IonicStepComponent } from './ionic-step';
+import { IonicStepperAnimations } from './ionic-stepper-animations';
 
 export type StepContentPositionState = ('next' | 'previous' | 'current');
 
@@ -29,7 +29,7 @@ export type StepContentPositionState = ('next' | 'previous' | 'current');
                              [active]="i <= selectedIndex">
           </ion-step-header>
           <div *ngIf="!isLast" class="ionic-stepper-horizontal-line"></div>
-      </ng-container>      
+      </ng-container>
     </div>
     <ng-container *ngFor="let step of _steps; let i = index; let isLast = last">
         <div class="ionic-stepper-horizontal-content-container"
@@ -76,7 +76,7 @@ export type StepContentPositionState = ('next' | 'previous' | 'current');
 })
 export class IonicStepperComponent implements OnInit {
   disabled: boolean;
-  _selectedIndex: number = 0;
+  _selectedIndex = 0;
   @ContentChildren(IonicStepComponent) _steps: QueryList<IonicStepComponent>;
 
   @Input() mode: ('horizontal' | 'vertical') = 'vertical';
@@ -88,7 +88,7 @@ export class IonicStepperComponent implements OnInit {
 
   set selectedIndex(index: number) {
     this._selectedIndex = index;
-    this.selectIndexChange.emit(this._selectedIndex)
+    this.selectIndexChange.emit(this._selectedIndex);
   }
 
   @Output() selectIndexChange: EventEmitter<number> = new EventEmitter<number>();
@@ -97,7 +97,7 @@ export class IonicStepperComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.render.addClass(this._hostRef.nativeElement, `ionic-stepper-${this.mode}`)
+    this.render.addClass(this._hostRef.nativeElement, `ionic-stepper-${this.mode}`);
   }
 
   nextStep(): void {
@@ -121,7 +121,7 @@ export class IonicStepperComponent implements OnInit {
     }
   }
 
-  private getAnimationDirection(index: number): StepContentPositionState {
+  getAnimationDirection(index: number): StepContentPositionState {
     const position = index - this.selectedIndex;
     if (position < 0) {
       return 'previous';

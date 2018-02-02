@@ -1,6 +1,6 @@
 import { Component, Input, TemplateRef, ViewChild } from '@angular/core';
 
-export type IonicStepStatus = ('' | 'error')
+export type IonicStepStatus = ('' | 'error');
 
 @Component({
   selector: 'ion-step',
@@ -14,13 +14,10 @@ export class IonicStepComponent {
   @Input() disabled: boolean;
   @Input() label: string;
   @Input() description: string;
-  @Input() icon: string = 'number';
-  @Input() errorIcon: string = 'close';
+  @Input() icon = 'number';
+  @Input() errorIcon = 'close';
   @Input() status: IonicStepStatus = '';
 
   @ViewChild(TemplateRef) content: TemplateRef<any>;
-
-  constructor() {
-  }
 
 }

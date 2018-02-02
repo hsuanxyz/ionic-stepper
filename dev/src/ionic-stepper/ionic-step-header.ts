@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IonicStepStatus } from "./ionic-step";
+import { IonicStepStatus } from './ionic-step';
 
 @Component({
   selector: 'ion-step-header',
@@ -27,16 +27,12 @@ export class IonicStepHeaderComponent {
 
   @Input() label: string;
   @Input() description: string;
-  @Input() icon: string = 'number';
-  @Input() errorIcon: string = 'close';
+  @Input() icon = 'number';
+  @Input() errorIcon = 'close';
   @Input() index: number;
-  @Input() active: boolean = false;
+  @Input() active = false;
   @Input() status: IonicStepStatus = '';
 
-  get isError(): boolean { return this.status === 'error' };
-
-  constructor() {
-  }
-
+  get isError(): boolean { return this.status === 'error'; }
 
 }
