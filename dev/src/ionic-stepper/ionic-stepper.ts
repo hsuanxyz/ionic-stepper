@@ -97,7 +97,16 @@ export class IonicStepperComponent implements OnInit, AfterContentInit {
     this._changeDetectorRef.markForCheck();
   }
 
-  setStep(index: number): void {
+  setStep(index: number): boolean {
+    const len = this._steps.length;
+    if (index < len - 1 && index > 0) {
+      this.selectedIndex = index;
+      this.selectChange.emit((this.selectedIndex));
+      this._changeDetectorRef.markForCheck();
+      return true;
+    } else {
+      return false;
+    }
   }
 
   private getAnimationDirection(index: number): StepContentPositionState {
