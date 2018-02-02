@@ -1,5 +1,4 @@
-import { Component, forwardRef, Inject, Input, OnChanges, TemplateRef, ViewChild } from '@angular/core';
-import { IonicStepperComponent } from "./ionic-stepper";
+import { Component, Input, TemplateRef, ViewChild } from '@angular/core';
 
 export type IonicStepStatus = ('' | 'error')
 
@@ -9,7 +8,7 @@ export type IonicStepStatus = ('' | 'error')
   <ng-template><ng-content></ng-content></ng-template>
   `
 })
-export class IonicStepComponent implements OnChanges {
+export class IonicStepComponent {
   index: number;
 
   @Input() disabled: boolean;
@@ -21,10 +20,7 @@ export class IonicStepComponent implements OnChanges {
 
   @ViewChild(TemplateRef) content: TemplateRef<any>;
 
-  constructor(@Inject(forwardRef(() => IonicStepperComponent)) private _stepper: IonicStepperComponent) {
-  }
-
-  ngOnChanges() {
+  constructor() {
   }
 
 }
