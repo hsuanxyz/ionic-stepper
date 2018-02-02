@@ -1,0 +1,49 @@
+@import "./variables";
+
+ion-stepper {
+
+  .#{$stepper-prefix}-horizontal-container,
+  .#{$stepper-prefix}-vertical-container {
+    display: block;
+  }
+
+  .#{$stepper-prefix}-horizontal-header-container {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+  }
+
+  .#{$stepper-prefix}-vertical-content-container {
+    margin-left: 36px;
+    position: relative;
+  }
+
+  .#{$stepper-prefix}-vertical-content {
+    overflow: hidden;
+  }
+
+  .ionic-vertical-content {
+    padding: 0 24px 24px 24px;
+  }
+
+  .#{$stepper-prefix}-vertical-line::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    bottom: -16px;
+    left: 0;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: $step-line-color;
+  }
+
+  .#{$stepper-prefix}-horizontal-line{
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: $step-line-color;
+    flex: auto;
+    height: 0;
+    margin: 0 -16px;
+    min-width: 10px;
+  }
+}
