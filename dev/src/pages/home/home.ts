@@ -7,6 +7,8 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
   mode:string = 'vertical';
+  selectedIndex = 0;
+
   constructor(public navCtrl: NavController) {
 
   }
