@@ -1,12 +1,11 @@
 {
   "name": "ionic-stepper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "steppers components for Ionic / ionic2",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd dev && ionic serve",
-    "postinstall": "cd dev && npm install",
     "clean": "rm -rf ./src ./dist",
     "lint": "tslint ./src/**/*.ts",
     "copy-src": "cpx './dev/src/ionic-stepper/**/*' './src'",

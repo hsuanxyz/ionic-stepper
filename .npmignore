@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+demo/
+.idea/
+node_modules/
+src/
+dev/
+tsconfig.json
+tslint.json
+yarn.lock
+package-lock.json
