@@ -7,7 +7,7 @@ import { IonicStepStatus } from './ionic-step';
 <div class="ionic-step-header-icon"
      [class.ionic-step-header-icon-error]="isError"
      [class.ionic-step-header-icon-active]="active">
-    <span class="ionic-step-header-icon-number" *ngIf="icon === 'number'; else ionIcon">{{index + 1}}</span>
+    <span class="ionic-step-header-icon-number" *ngIf="(icon === 'number' && status === ''); else ionIcon">{{index + 1}}</span>
     <ng-template #ionIcon><ion-icon [name]="!isError ? icon : errorIcon"></ion-icon></ng-template>
 </div>
 <div class="ionic-step-header-text-container" [class.mt]="description">

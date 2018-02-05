@@ -24,6 +24,7 @@ export type StepContentPositionState = ('next' | 'previous' | 'current');
        <ng-container *ngFor="let step of _steps; let i = index; let isLast = last">
           <ion-step-header [index]="i"
                              [icon]="step.icon"
+                             [errorIcon]="step.errorIcon"
                              [label]="step.label"
                              [status]="step.status"
                              [active]="i <= selectedIndex">
@@ -48,6 +49,7 @@ export type StepContentPositionState = ('next' | 'previous' | 'current');
     <ng-container *ngFor="let step of _steps; let i = index; let isLast = last">
         <ion-step-header [index]="i"
                            [icon]="step.icon"
+                           [errorIcon]="step.errorIcon"
                            [label]="step.label"
                            [status]="step.status"
                            [active]="i <= selectedIndex"
