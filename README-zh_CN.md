@@ -4,7 +4,7 @@
 
 # ionic-stepper
 
-Steppers components for Ionic.
+用于 Ionic 的分步器 (stepper)。
 
 [![Build Status][build-image]][build-image]
 [![Dependency Status][dependency-image]][dependency-url]
@@ -13,16 +13,14 @@ Steppers components for Ionic.
 [![Downloads][downloads-image]][downloads-url]
 [![MIT License][license-image]][license-url]
 
-[中文 README](README-zh_CN.md)
+## 开始
 
-## Getting Started
-
-### Prerequisites
+### 前提条件
 
 - `ionic-angular: ^3.x`
 - `@angular/animations: ^4.x`
 
-### Installing
+### 安装
 
 ```base
 $ npm install ionic-stepper
@@ -30,9 +28,9 @@ $ npm install ionic-stepper
 $ yarn add ionic-stepper
 ```
 
-### Usage
+### 使用
 
-import in `your-root.module.ts`
+import 到你的 `root.module.ts`
 
 ```ts
 import { BrowserModule } from '@angular/platform-browser';
@@ -99,16 +97,16 @@ export class HomePage {
 
 | Name            | Type          | Default       | Description |
 | --------------- | ------------- | ------------- | ----------- |
-| [mode]          | `'horizontal', 'vertical'`    | `'vertical'`| orientation |
-| (selectIndexChange) | `EventEmitter<number>`    |             | index change event |
+| [mode]          | `'horizontal', 'vertical'`    | `'vertical'`| 方向 |
+| (selectIndexChange) | `EventEmitter<number>`    |             | index 改变事件 |
 
 #### method
 
 | Name            |  Description |
 | --------------- |   ----------- |
-| nextStep(): void        |  next step   |
-| previousStep(): void    |  previous step  |
-| setStep(index: number): boolean | set step by index |
+| nextStep(): void        |  下一步   |
+| previousStep(): void    |  上一步  |
+| setStep(index: number): boolean | 通过 index 设置 |
 
 
 ### `ion-step`
@@ -117,21 +115,21 @@ export class HomePage {
 
 | Name            | Type          | Default       | Description |
 | --------------- | ------------- | ------------- | ----------- |
-| [label]         | `string`      |               | step label  |
-| [description]   | `string`      |               | step description (only vertical mode is visible) |
-| [icon]          | `icon`        | `'number'`    | step icon, default display the index ([icons](https://ionicframework.com/docs/ionicons/)) |
-| [status]        | `'error', ''` | `''`          | step status |
-| [errorIcon]     | `string`      | `'close'`     | error status icon |
+| [label]         | `string`      |               |  label  |
+| [description]   | `string`      |               | 描述 (仅在 visible 有效) |
+| [icon]          | `icon`        | `'number'`    | step 的 icon, 默认显示当前 index ([icons](https://ionicframework.com/docs/ionicons/)) |
+| [status]        | `'error', ''` | `''`          | step 的状态 |
+| [errorIcon]     | `string`      | `'close'`     | 错误状态下的 icon |
 
 ### `[ionicStepperNext]`
 
-moves to the next step in the stepper
+移动到下一步
 
 `<button ion-button ionicStepperNext>Next</button>`
 
 ### `[ionicStepperPrevious]`
 
-moves to the previous step in the stepper
+移动到上一步
 
 `<button ion-button ionicStepperPrevious>Previous</button>`
 
