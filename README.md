@@ -9,7 +9,6 @@ Steppers components for Ionic.
 [![Build Status][build-image]][build-image]
 [![Dependency Status][dependency-image]][dependency-url]
 [![NPM version][npm-image]][npm-url]
-[![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][downloads-url]
 [![MIT License][license-image]][license-url]
 
