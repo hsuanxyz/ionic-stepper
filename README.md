@@ -35,6 +35,7 @@ import in `your-root.module.ts`
 
 ```ts
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
@@ -46,6 +47,7 @@ import { IonicStepperModule } from 'ionic-stepper';
   ...
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     IonicStepperModule,
     IonicModule.forRoot(MyApp)
   ],

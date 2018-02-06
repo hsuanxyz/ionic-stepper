@@ -1,8 +1,9 @@
 {
   "name": "ionic-stepper",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "steppers components for Ionic / ionic2",
   "main": "dist/index.js",
+  "typings": "./dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd dev && ionic serve",
@@ -19,13 +20,12 @@
     "type": "git",
     "url": "git+https://github.com/HsuanXyz/ionic-stepper.git"
   },
-  "dependencies": {
-    "@angular/animations": "^4.4.6"
-  },
+  "dependencies": {},
   "devDependencies": {
     "tslint": "^5.4.3",
     "tslint-ionic-rules": "^0.0.13",
     "typescript": "~2.4.2",
+    "@angular/animations": "^4.4.6",
     "@angular/common": "4.4.6",
     "@angular/compiler": "4.4.6",
     "@angular/compiler-cli": "4.4.6",
