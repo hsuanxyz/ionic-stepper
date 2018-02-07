@@ -1,0 +1,17 @@
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+  - '6.10'
+branches:
+  only:
+  - master
+
+env:
+  - TASK=build
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+  - npm run $TASK
