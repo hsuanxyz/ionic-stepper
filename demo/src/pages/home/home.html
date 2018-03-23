@@ -10,36 +10,33 @@
   <div padding>
     <button ion-button (click)="mode = 'horizontal'">horizontal</button>
     <button ion-button (click)="mode = 'vertical'">vertical</button>
-    <button ion-button (click)="stepper.setStep(0)">select first</button>
   </div>
 
-  <ion-stepper #stepper [(selectedIndex)]="selectedIndex" [mode]="mode" (selectIndexChange)="selectChange($event)">
-    <ion-step label="Step1"
-              description="Step1 description">
-      <h2>Step1 Content</h2>
-      <p>Step1 Content</p>
-      <button ion-button small ionicStepperNext>Next</button>
-    </ion-step>
-    <ion-step label="Step2 - Step2 - Step2"
-              description="Step1 description">
-      <h2>Step2 Content</h2>
-      <p>Step2 Content</p>
-      <button ion-button color="light" small ionicStepperPrevious>Previous</button>
-      <button ion-button small ionicStepperNext>Next</button>
-    </ion-step>
-    <ion-step label="Step3"
-              status="error"
-              description="Step3 description">
-      <h2>Step3 Content</h2>
-      <p>Step3 Content</p>
-      <button ion-button color="light" small ionicStepperPrevious>Previous</button>
-      <button ion-button small ionicStepperNext>Next</button>
-    </ion-step>
-    <ion-step label="Step4"
-              description="Step4 description">
-      <h2>Step4 Content</h2>
-      <p>Step4 Content</p>
-      <button ion-button color="light" small ionicStepperPrevious>Previous</button>
-    </ion-step>
-  </ion-stepper>
+  <form [formGroup]="stepperForm" (ngSubmit)="onSubmit()">
+    <ion-stepper #stepper [(selectedIndex)]="selectedIndex" [mode]="mode" (selectIndexChange)="selectChange($event)">
+      <ion-step label="Name"
+                description="Your name">
+        <ion-input formControlName="name" placeholder="Text Input"></ion-input>
+        <button type="button" ion-button small ionicStepperNext [disabled]="name.invalid">Next</button>
+      </ion-step>
+      <ion-step label="Email"
+                description="Your email">
+        <ion-input formControlName="email" placeholder="Text Input"></ion-input>
+        <button type="button" ion-button color="light" small ionicStepperPrevious>Previous</button>
+        <button type="button" ion-button small ionicStepperNext [disabled]="email.invalid">Next</button>
+      </ion-step>
+      <ion-step label="Address"
+                description="Your address">
+        <ion-input formControlName="address" placeholder="Text Input"></ion-input>
+        <button type="button" ion-button color="light" small ionicStepperPrevious>Previous</button>
+        <button type="button" ion-button small ionicStepperNext>Next</button>
+      </ion-step>
+      <ion-step label="Confirm"
+                description="Confirm your input">
+        <pre>{{ _JSONString }}</pre>
+        <button type="reset" ion-button color="light" small (click)="onReset()">Reset</button>
+        <button ion-button small type="submit">Submit</button>
+      </ion-step>
+    </ion-stepper>
+  </form>
 </ion-content>

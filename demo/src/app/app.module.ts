@@ -8,6 +8,7 @@ import { IonicStepperModule } from 'ionic-stepper';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,8 @@ import { HomePage } from '../pages/home/home';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     IonicStepperModule,
     IonicModule.forRoot(MyApp)
   ],
