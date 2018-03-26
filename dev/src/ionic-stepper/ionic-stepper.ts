@@ -75,6 +75,7 @@ export type StepContentPositionState = ('next' | 'previous' | 'current');
     IonicStepperAnimations.verticalStepTransition,
     IonicStepperAnimations.horizontalStepTransition,
   ],
+  styleUrls: ['./ionic-stepper.scss']
 })
 export class IonicStepperComponent implements OnInit {
   disabled: boolean;
