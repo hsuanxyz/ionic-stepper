@@ -114,7 +114,7 @@ export class IonicStepperComponent implements OnInit {
 
   setStep(index: number): boolean {
     const len = this._steps.length;
-    if (index < len - 1 && index >= 0) {
+    if (index < len && index >= 0) {
       this.selectedIndex = index;
       this._changeDetectorRef.markForCheck();
       return true;
