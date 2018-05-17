@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HsuanXyz/ionic-stepper.git"
+    "url": "git+https://github.com/kurpav/ionic-stepper.git"
   },
   "dependencies": {},
   "devDependencies": {
